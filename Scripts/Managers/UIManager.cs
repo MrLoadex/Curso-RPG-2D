@@ -14,6 +14,7 @@ public class UIManager : Singleton<UIManager>
     [Header("Paneles")]
     [SerializeField] private GameObject panelStats;
     [SerializeField] private GameObject panelInventario;
+    [SerializeField] private GameObject panelQuest;
 
 
     [Header("Barra")]
@@ -50,7 +51,6 @@ public class UIManager : Singleton<UIManager>
     private float expRequeridaNuevoNivel;
     private float nivelActual;
 
-
     // Update is called once per frame
     void Update()
     {
@@ -77,7 +77,7 @@ public class UIManager : Singleton<UIManager>
 
     private void ActualizarPanelStats()
     {
-        if (panelStats.activeSelf == false)
+        if (!panelStats.activeSelf)
         {
             return;
         }
@@ -126,6 +126,25 @@ public class UIManager : Singleton<UIManager>
     public void AbrirCerrarPanelInventario()
     {
         panelInventario.SetActive(!panelInventario.activeSelf);
+    }
+
+    public void  AbrirCerrarPanelQuests()
+    {
+        panelQuest.SetActive(!panelQuest.activeSelf);
+    }
+
+    public void AbrirPanelInteraccion(InteracionExtraNPC tipoInteraccion)
+    {
+        switch (tipoInteraccion)
+        {
+            case InteracionExtraNPC.Quests:
+                AbrirCerrarPanelQuests();
+                break;
+            case InteracionExtraNPC.Crafting:
+                break;
+            case InteracionExtraNPC.Tienda:
+                break;
+        }
     }
 
     #endregion
