@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuestManager : Singleton<QuestManager>
 {
@@ -15,6 +17,16 @@ public class QuestManager : Singleton<QuestManager>
     [Header("Personaje Quest")]
     [SerializeField] private PersonajeQuestDescripcion personajeQuestPrefab;
     [SerializeField] private Transform personajeQuestContenedor;
+
+    [Header("Panel Quest Completado")]
+    [SerializeField] private GameObject panelQuestCompletado;
+    [SerializeField] private TextMeshProUGUI questNombre;
+    [SerializeField] private TextMeshProUGUI questRecompensaOro;
+    [SerializeField] private TextMeshProUGUI questRecompensaExp;
+    [SerializeField] private TextMeshProUGUI questRecompensaItemCantidad;
+    [SerializeField] private Image questRecompensaItemIcono;
+
+    public Quest QuestPorReclamar { get; private set; }
 
     private void Start() 
     {
@@ -73,4 +85,35 @@ public class QuestManager : Singleton<QuestManager>
         }
         return null;
     }
+
+    private void MostrarQuestCompletado(Quest questCompletado)
+    {
+        panelQuestCompletado.gameObject.SetActive(true);
+        questNombre.text = questCompletado.Nombre;
+        questRecompensaOro.text = questCompletado.RecompensaOro.ToString();
+        questRecompensaExp.text = questCompletado.RecompensaExp.ToString();
+        questRecompensaItemCantidad.text = questCompletado.RecompensaItem.Cantidad.ToString();
+        questRecompensaItemIcono.sprite = questCompletado.RecompensaItem.item.Icono;
+    }
+
+    private void ResponderQuestCompletado(Quest questCompletado)
+    {
+        QuestPorReclamar = VerificarExistenciaQuest(questCompletado.ID);
+        if(QuestPorReclamar == null)
+        {
+            return;
+        }
+        MostrarQuestCompletado(QuestPorReclamar);
+    }
+
+    private void OnEnable() 
+    {
+        Quest.EventoQuestCompletado += ResponderQuestCompletado;
+    }
+
+    private void OnDisable() 
+    {
+        Quest.EventoQuestCompletado += ResponderQuestCompletado;
+    }
+
 }

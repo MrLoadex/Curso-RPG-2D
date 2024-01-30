@@ -48,6 +48,11 @@ public class PersonajeQuestDescripcion : QuestDescripcion
 
     private void OnEnable()
     {
+        if (QuestPorCompletar.QuestCompletado)
+        {
+            gameObject.SetActive(false);
+        }
+        
         Quest.EventoQuestCompletado += CompletarQuest;
     }
 
