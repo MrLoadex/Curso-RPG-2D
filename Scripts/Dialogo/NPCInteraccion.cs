@@ -20,7 +20,7 @@ public class NPCInteraccion : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other) 
     {
-        DialogoManager.Instance.NPCDisponible = null;
+        DialogoManager.Instance.NPCDisponible = null; 
         npcBotonInteractuar.SetActive(false);
     }
 }

@@ -15,6 +15,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private GameObject panelStats;
     [SerializeField] private GameObject panelInventario;
     [SerializeField] private GameObject panelQuest;
+    [SerializeField] private GameObject panelQuestPersonaje;
 
 
     [Header("Barra")]
@@ -145,6 +146,11 @@ public class UIManager : Singleton<UIManager>
             case InteracionExtraNPC.Tienda:
                 break;
         }
+    }
+
+    public void AbrirCerrarPanelQuestsPersonaje()
+    {
+        panelQuestPersonaje.SetActive(!panelQuestPersonaje.activeSelf);
     }
 
     #endregion

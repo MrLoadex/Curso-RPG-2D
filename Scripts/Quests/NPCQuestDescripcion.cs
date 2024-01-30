@@ -10,21 +10,20 @@ public class NPCQuestDescripcion : QuestDescripcion
 
     public override void ConfigurarQuestUI(Quest quest)
     {
-        QuestCargado = quest;
         base.ConfigurarQuestUI(quest);
-        questRecompensa.text = $"-{quest.RecompensaOro} Oro" + 
-        $"-{quest.RecompensaExp} Exp " + 
-        $"-{quest.RecompensaItem.item.Nombre} X {quest.RecompensaItem.item.Cantidad}";
+        questRecompensa.text = $"-{quest.RecompensaOro} Oro \n" + 
+        $"-{quest.RecompensaExp} Exp\n" + 
+        $"-{quest.RecompensaItem.item.Nombre} X {quest.RecompensaItem.Cantidad}";
     }
 
     public void AceptarQuest()
     {
-        if(QuestCargado == null)
+        if(QuestPorCompletar == null)
         {
             return;
         }
 
-        QuestManager.Instance.AñadirQuest(QuestCargado);
+        QuestManager.Instance.AñadirQuest(QuestPorCompletar);
         gameObject.SetActive(false);
     }
 }

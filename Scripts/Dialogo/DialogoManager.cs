@@ -33,6 +33,7 @@ public class DialogoManager : Singleton<DialogoManager>
 
         if (Input.GetKeyDown(KeyCode.E) && !dialogoComenzado)
         {
+            Personaje.Instance.PersonajeMovimiento.enabled = false;
             dialogoComenzado = true;
             ConfigurarPanel(NPCDisponible.Dialogo);
         }
@@ -42,7 +43,7 @@ public class DialogoManager : Singleton<DialogoManager>
         {
             if(despedidaMostrada)
             {
-                AbrirCerrarPanelDialogo(estado: false);
+                AbrirCerrarPanelDialogo(false);
                 despedidaMostrada = false;
                 return;
             }
@@ -50,7 +51,10 @@ public class DialogoManager : Singleton<DialogoManager>
             if(NPCDisponible.Dialogo.ContieneInteraccionExtra)
             {
                 UIManager.Instance.AbrirPanelInteraccion(NPCDisponible.Dialogo.InteraccionExtra);
+                FinalizarConversacion();
                 AbrirCerrarPanelDialogo(false);
+                despedidaMostrada = false;
+                return;
             }
 
             if (dialogoAnimado)
@@ -77,13 +81,19 @@ public class DialogoManager : Singleton<DialogoManager>
         {
             string despedida = NPCDisponible.Dialogo.Despedida;
             MostrarTextoConAnimacion(despedida);
-            despedidaMostrada = true;
-            dialogoComenzado = false;
+            FinalizarConversacion();
             return;
         }
 
         string siguienteDialogo = dialogosSecuencia.Dequeue();
         MostrarTextoConAnimacion(siguienteDialogo);
+    }
+
+    private void FinalizarConversacion()
+    {
+        despedidaMostrada = true;
+        dialogoComenzado = false;
+        Personaje.Instance.PersonajeMovimiento.enabled = true;
     }
 
     public void AbrirCerrarPanelDialogo(bool estado)

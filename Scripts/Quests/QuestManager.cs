@@ -18,7 +18,17 @@ public class QuestManager : Singleton<QuestManager>
 
     private void Start() 
     {
-        CargarQuestNPCs();    
+        CargarQuestNPCs();
+    }
+
+    private void Update() 
+    {
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            AñadirProgreso("Mata10", 1);
+            AñadirProgreso("Mata25", 1);
+            AñadirProgreso("Mata50", 1);
+        }
     }
 
     private void CargarQuestNPCs()
@@ -39,5 +49,28 @@ public class QuestManager : Singleton<QuestManager>
     public void AñadirQuest(Quest questPorCompletar)
     {
         AñadirQuestPorCompletar(questPorCompletar);
+    }
+
+    public void AñadirProgreso(string questID, int cantidad)
+    {
+        Quest questPorActualizar = VerificarExistenciaQuest(questID);
+        if (questPorActualizar == null)
+        {
+            return;
+        }
+        
+        questPorActualizar.AñadirProgreso(cantidad);
+    }
+
+    private Quest VerificarExistenciaQuest(string questID)
+    {
+        for (int i = 0; i < questDisponibles.Length; i++)
+        {
+            if(questDisponibles[i].ID == questID)
+            {
+                return questDisponibles[i];
+            }
+        }
+        return null;
     }
 }

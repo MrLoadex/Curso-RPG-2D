@@ -59,6 +59,7 @@ public class PersonajeVida : VidaBase
 
     protected override void PersonajeDerrotado()
     {
+        Personaje.Instance.PersonajeMovimiento.enabled = false;
         _boxCillider2D.enabled = false;
         Derrotado = true;
         //Si el EventoPerosnajeDerrotado != nulo lo invoca
@@ -68,6 +69,7 @@ public class PersonajeVida : VidaBase
 
     public void RestaurarPersoanje()
     {
+        Personaje.Instance.PersonajeMovimiento.enabled = true;
         _boxCillider2D.enabled = true;
         Derrotado = false;
         Salud = saludInicial;

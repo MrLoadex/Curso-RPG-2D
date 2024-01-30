@@ -2,6 +2,7 @@ using System.Buffers.Text;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,15 @@ public class PersonajeQuestDescripcion : QuestDescripcion
     [SerializeField] private Image recompensaItemIcono;
     [SerializeField] private TextMeshProUGUI recompensaItemCantidad;
 
+    private void Update() 
+    {
+        if(QuestPorCompletar.QuestCompletado)
+        {
+            return;
+        }
+        tareaObjetivo.text = $"{QuestPorCompletar.CantidadActual}/{QuestPorCompletar.CantidadObjetivo}";
+    }
+
     public override void ConfigurarQuestUI(Quest questPorCargar)
     {
         base.ConfigurarQuestUI(questPorCargar);
@@ -24,5 +34,25 @@ public class PersonajeQuestDescripcion : QuestDescripcion
 
         recompensaItemIcono.sprite = questPorCargar.RecompensaItem.item.Icono;
         recompensaItemCantidad.text = questPorCargar.RecompensaItem.Cantidad.ToString();
+
+    }
+
+    private void CompletarQuest(Quest questCompletado)
+    {
+        if (questCompletado.ID == QuestPorCompletar.ID)
+        {
+            tareaObjetivo.text = $"{QuestPorCompletar.CantidadActual}/{QuestPorCompletar.CantidadObjetivo}";
+            gameObject.SetActive(false);
+        }
+    }
+
+    private void OnEnable()
+    {
+        Quest.EventoQuestCompletado += CompletarQuest;
+    }
+
+    private void OnDisable() 
+    {
+        Quest.EventoQuestCompletado -= CompletarQuest;
     }
 }

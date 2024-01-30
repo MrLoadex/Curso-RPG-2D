@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Personaje : MonoBehaviour
+public class Personaje : Singleton<Personaje>
 {
     [SerializeField] private PersonajeStats stats;
 
     public PersonajeVida PersonajeVida {get; private set; }
     public PersonajeAnimaciones PersonajeAnimaciones { get; private set; }
     public PersonajeMana PersonajeMana { get; private set; }
+    public PersonajeMovimiento PersonajeMovimiento {get; private set;}
 
-    private void Awake() 
+    override protected void Awake() 
     {
+        base.Awake();
         PersonajeVida = GetComponent<PersonajeVida>();   
         PersonajeAnimaciones = GetComponent<PersonajeAnimaciones>(); 
-        PersonajeMana = GetComponent<PersonajeMana>();
+        PersonajeMovimiento = GetComponent<PersonajeMovimiento>();
     }
 
     public void RestaurarPersonaje()
