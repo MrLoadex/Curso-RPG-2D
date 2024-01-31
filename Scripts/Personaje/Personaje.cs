@@ -10,6 +10,7 @@ public class Personaje : Singleton<Personaje>
     public PersonajeAnimaciones PersonajeAnimaciones { get; private set; }
     public PersonajeMana PersonajeMana { get; private set; }
     public PersonajeMovimiento PersonajeMovimiento {get; private set;}
+    public PersonajeExperiencia PersonajeExperiencia {get; private set;}
 
     override protected void Awake() 
     {
@@ -17,6 +18,7 @@ public class Personaje : Singleton<Personaje>
         PersonajeVida = GetComponent<PersonajeVida>();   
         PersonajeAnimaciones = GetComponent<PersonajeAnimaciones>(); 
         PersonajeMovimiento = GetComponent<PersonajeMovimiento>();
+        PersonajeExperiencia = GetComponent<PersonajeExperiencia>();
     }
 
     public void RestaurarPersonaje()

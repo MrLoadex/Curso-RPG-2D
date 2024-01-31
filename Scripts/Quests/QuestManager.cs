@@ -52,6 +52,19 @@ public class QuestManager : Singleton<QuestManager>
         }
     }
 
+    public void ReclamarRecompensa()
+    {
+        if(QuestPorReclamar == null)
+        {
+            return;
+        }
+        MonedasManager.Instance.AñadirMonedas(QuestPorReclamar.RecompensaOro);
+        Personaje.Instance.PersonajeExperiencia.AñadirExperiencia(QuestPorReclamar.RecompensaExp);
+        Inventario.Instance.AñadirItem(QuestPorReclamar.RecompensaItem.item, QuestPorReclamar.RecompensaItem.Cantidad);
+        panelQuestCompletado.SetActive(false);
+        QuestPorReclamar = null;
+    }
+
     private void AñadirQuestPorCompletar(Quest questPorCompletar)
     {
         PersonajeQuestDescripcion nuevoQuest = Instantiate(personajeQuestPrefab, personajeQuestContenedor);
