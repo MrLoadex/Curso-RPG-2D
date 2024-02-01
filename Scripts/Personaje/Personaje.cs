@@ -2,23 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Personaje : Singleton<Personaje>
+public class Personaje : MonoBehaviour
 {
     [SerializeField] private PersonajeStats stats;
 
     public PersonajeVida PersonajeVida {get; private set; }
-    public PersonajeAnimaciones PersonajeAnimaciones { get; private set; }
     public PersonajeMana PersonajeMana { get; private set; }
-    public PersonajeMovimiento PersonajeMovimiento {get; private set;}
     public PersonajeExperiencia PersonajeExperiencia {get; private set;}
+    public PersonajeMovimiento PersonajeMovimiento {get; private set;}
+    public PersonajeAnimaciones PersonajeAnimaciones { get; private set; }
 
-    override protected void Awake() 
+    private void Awake() 
     {
-        base.Awake();
         PersonajeVida = GetComponent<PersonajeVida>();   
-        PersonajeAnimaciones = GetComponent<PersonajeAnimaciones>(); 
-        PersonajeMovimiento = GetComponent<PersonajeMovimiento>();
+        PersonajeMana = GetComponent<PersonajeMana>();   
         PersonajeExperiencia = GetComponent<PersonajeExperiencia>();
+        PersonajeMovimiento = GetComponent<PersonajeMovimiento>();
+        PersonajeAnimaciones = GetComponent<PersonajeAnimaciones>(); 
     }
 
     public void RestaurarPersonaje()
@@ -26,6 +26,7 @@ public class Personaje : Singleton<Personaje>
         PersonajeVida.RestaurarPersoanje();
         PersonajeAnimaciones.RevivirPersonaje();
         PersonajeMana.RestablecerMana();
+        PersonajeMovimiento.enabled = true;
     }
 
     private void AtributoRespuesta(TipoAtributo tipo)

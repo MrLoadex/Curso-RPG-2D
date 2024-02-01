@@ -53,7 +53,6 @@ public class UIManager : Singleton<UIManager>
     private float expRequeridaNuevoNivel;
     private float nivelActual;
 
-    // Update is called once per frame
     void Update()
     {
             ActualizarUIPersonaje();

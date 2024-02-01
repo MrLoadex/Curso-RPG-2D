@@ -12,11 +12,13 @@ public class PersonajeVida : VidaBase
     public bool Derrotado { get; private set; }
     public bool PuedeSerCurado => Salud < saludMax && !Derrotado;
     
+    //private Personaje personaje;
     private BoxCollider2D _boxCillider2D;
 
     private void Awake() 
     {
         _boxCillider2D = GetComponent<BoxCollider2D>();
+        //personaje = GetComponent<Personaje>();
     }
 
     protected override void Start() 
@@ -59,7 +61,7 @@ public class PersonajeVida : VidaBase
 
     protected override void PersonajeDerrotado()
     {
-        Personaje.Instance.PersonajeMovimiento.enabled = false;
+        //personaje.PersonajeMovimiento.enabled = false;
         _boxCillider2D.enabled = false;
         Derrotado = true;
         //Si el EventoPerosnajeDerrotado != nulo lo invoca
@@ -69,7 +71,7 @@ public class PersonajeVida : VidaBase
 
     public void RestaurarPersoanje()
     {
-        Personaje.Instance.PersonajeMovimiento.enabled = true;
+        //personaje.PersonajeMovimiento.enabled = true;
         _boxCillider2D.enabled = true;
         Derrotado = false;
         Salud = saludInicial;

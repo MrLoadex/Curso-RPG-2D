@@ -26,6 +26,9 @@ public class QuestManager : Singleton<QuestManager>
     [SerializeField] private TextMeshProUGUI questRecompensaItemCantidad;
     [SerializeField] private Image questRecompensaItemIcono;
 
+    [Header("Player")]
+    [SerializeField] private Personaje personaje;
+
     public Quest QuestPorReclamar { get; private set; }
 
     private void Start() 
@@ -59,7 +62,7 @@ public class QuestManager : Singleton<QuestManager>
             return;
         }
         MonedasManager.Instance.AñadirMonedas(QuestPorReclamar.RecompensaOro);
-        Personaje.Instance.PersonajeExperiencia.AñadirExperiencia(QuestPorReclamar.RecompensaExp);
+        personaje.PersonajeExperiencia.AñadirExperiencia(QuestPorReclamar.RecompensaExp);
         Inventario.Instance.AñadirItem(QuestPorReclamar.RecompensaItem.item, QuestPorReclamar.RecompensaItem.Cantidad);
         panelQuestCompletado.SetActive(false);
         QuestPorReclamar = null;

@@ -56,4 +56,20 @@ public class PersonajeMovimiento : MonoBehaviour
     {
         _rigidbody2D.MovePosition(_rigidbody2D.position + _direccionMovimiento * velocidad * Time.fixedDeltaTime);
     }
+
+    private void ResponderEventoPersonajeDerrotado()
+    {
+        enabled = false;
+    }
+
+    private void OnEnable() 
+    {
+        PersonajeVida.EventoPersonajeDerrotado += ResponderEventoPersonajeDerrotado;
+    }
+
+    private void OnDisable() 
+    {
+        PersonajeVida.EventoPersonajeDerrotado += ResponderEventoPersonajeDerrotado;
+        
+    }
 }

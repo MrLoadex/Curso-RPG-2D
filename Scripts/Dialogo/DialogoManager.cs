@@ -7,10 +7,14 @@ using UnityEngine.UI;
 
 public class DialogoManager : Singleton<DialogoManager>
 {
+    [Header("Panel Dialogo")]
     [SerializeField] private GameObject panelDialogo;
     [SerializeField] private Image npcIcono;
     [SerializeField] private TextMeshProUGUI npcNombreTMP;
     [SerializeField] private TextMeshProUGUI npcConversacionTMP;
+
+    [Header("Player")]
+    [SerializeField] private Personaje personaje;
     
     public NPCInteraccion NPCDisponible { get; set; }
 
@@ -33,7 +37,7 @@ public class DialogoManager : Singleton<DialogoManager>
 
         if (Input.GetKeyDown(KeyCode.E) && !dialogoComenzado)
         {
-            Personaje.Instance.PersonajeMovimiento.enabled = false;
+            personaje.PersonajeMovimiento.enabled = false;
             dialogoComenzado = true;
             ConfigurarPanel(NPCDisponible.Dialogo);
         }
@@ -93,7 +97,7 @@ public class DialogoManager : Singleton<DialogoManager>
     {
         despedidaMostrada = true;
         dialogoComenzado = false;
-        Personaje.Instance.PersonajeMovimiento.enabled = true;
+        personaje.PersonajeMovimiento.enabled = true;
     }
 
     public void AbrirCerrarPanelDialogo(bool estado)
