@@ -12,6 +12,9 @@ public class IAController : MonoBehaviour
     [SerializeField] private float rangoDeteccion;
     [SerializeField] private LayerMask personajeLayerMask;
     [SerializeField] private float velocidadMovimiento;
+    
+    [Header("Debug")]
+    [SerializeField]private bool mostrarDeteccion;
 
     public Transform PersonajeReferencia { get; set; }
     public IAEstado EstadoActual { get; set; }
@@ -38,5 +41,13 @@ public class IAController : MonoBehaviour
             EstadoActual = nuevoEstado;
         }
 
+    }
+
+    private void OnDrawGizmos() {
+        if(mostrarDeteccion)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(transform.position, rangoDeteccion);
+        }
     }
 }

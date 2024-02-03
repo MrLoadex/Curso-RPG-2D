@@ -18,6 +18,3 @@ MonoBehaviour:
   - Decision: {fileID: 11400000, guid: acf2ea18743a91c469e43400108fffa7, type: 2}
     EstadoVerdadero: {fileID: 11400000, guid: e648d432562cc1c46b5346f3433f92d3, type: 2}
     EstadoFalso: {fileID: 11400000, guid: 4ea76f5d880da3b428f6c2cc2cc1144a, type: 2}
-  - Decision: {fileID: 0}
-    EstadoVerdadero: {fileID: 0}
-    EstadoFalso: {fileID: 0}

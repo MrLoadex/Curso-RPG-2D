@@ -22,6 +22,7 @@ public class DesicionDeteccionPersonaje : IADecision
             return true;
         }
 
+        controller.PersonajeReferencia = null;
         return false;
     }
 }
