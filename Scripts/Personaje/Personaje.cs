@@ -11,6 +11,7 @@ public class Personaje : MonoBehaviour
     public PersonajeExperiencia PersonajeExperiencia {get; private set;}
     public PersonajeMovimiento PersonajeMovimiento {get; private set;}
     public PersonajeAnimaciones PersonajeAnimaciones { get; private set; }
+    public PersonajeStats PersonajeStats => stats;
 
     private void Awake() 
     {
