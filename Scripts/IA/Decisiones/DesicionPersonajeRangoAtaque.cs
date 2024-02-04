@@ -23,7 +23,7 @@ public class DesicionPersonajeRangoAtaque : IADecision
                            controller.transform.position).sqrMagnitude;
 
         // Verificar si esta en el rango de ataque
-        if (distancia < Mathf.Pow(controller.RangoDeAtaque, 2))
+        if (distancia < Mathf.Pow(controller.RangoDeAtaqueDeterminado, 2))
         {
             return true;
         }

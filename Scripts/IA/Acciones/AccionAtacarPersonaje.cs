@@ -22,10 +22,17 @@ public class AccionAtacarPersonaje : IAAccion
             return;
         }
 
-        if (controller.PersonajeEnRangoDeAtaque(controller.RangoDeAtaque))
+        if (controller.PersonajeEnRangoDeAtaque(controller.RangoDeAtaqueDeterminado))
         {
-            //Atacar al enemigo (Player)
-            controller.AtaqueMele(controller.Daño);
+                //Atacar al enemigo (Player)
+            if (controller.TipoAtaque == TiposDeAtaque.Embestida)
+            {
+                controller.AtaqueEmbestida(controller.Daño);
+            }
+            else
+            {
+                controller.AtaqueMele(controller.Daño);
+            }
 
             //Actualizar el tiempo entre ataques
             controller.ActualizarTiempoEntreAtaques();
