@@ -1,3 +1,6 @@
 **Juego desarrollado en Unity**
 
-*Aqui solo se encontraran los archivos principales del proyecto. Para poder utilizarlo antes debes crear un proyecto y luego reemplazar los archivos en la carpeta principal.*
+*Este repositorio posee todos los archivos del juego excepto el directorio Library.*
+Para poder utilizar este repositorio tienes que:
+Crear un proyecyo de Unity
+Reemplazar los archivos en la carpeta principal.
