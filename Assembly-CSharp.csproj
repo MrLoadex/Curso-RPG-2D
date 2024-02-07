@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\Quests\PersonajeQuestDescripcion.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeVida.cs" />
+    <Compile Include="Assets\Scripts\Extras\ObjectPooler.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeExperiencia.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\IA\Decisiones\DesicionDeteccionPersonaje.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Personaje\PersonajeFX.cs" />
     <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
     <Compile Include="Assets\Scripts\IA\SistemaIA\IAAccion.cs" />
     <Compile Include="Assets\Scripts\Inventario\InventarioItem.cs" />
