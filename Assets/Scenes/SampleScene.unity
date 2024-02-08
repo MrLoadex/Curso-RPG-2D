@@ -3684,6 +3684,8 @@ GameObject:
   - component: {fileID: 348227954}
   - component: {fileID: 348227955}
   - component: {fileID: 348227956}
+  - component: {fileID: 348227958}
+  - component: {fileID: 348227957}
   m_Layer: 6
   m_Name: GreenNinja
   m_TagString: Player
@@ -3776,7 +3778,8 @@ Transform:
   m_LocalPosition: {x: -2.2, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1433670659}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &348227949
@@ -3937,6 +3940,33 @@ MonoBehaviour:
   nivelMax: 5
   expBase: 2
   valorIncremental: 2
+--- !u!114 &348227957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348227945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e22befba8124914ba9574686421d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasTextoAnimacionPrefab: {fileID: 3852414835339296864, guid: 0c395043d69deb946ad922e0705ce964, type: 3}
+  canvasTextoPosicion: {fileID: 1433670659}
+--- !u!114 &348227958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348227945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ee2513ac5720545a0fafb907da2238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cantidadPorCrear: 10
 --- !u!1 &370755902
 GameObject:
   m_ObjectHideFlags: 0
@@ -6955,7 +6985,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594227264}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -9532,7 +9562,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021396173}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -35643,6 +35673,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88734039b65240b40852856792992a9e, type: 3}
+--- !u!1 &1433670658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1433670659}
+  m_Layer: 6
+  m_Name: TextoPosicion
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1433670659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433670658}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.47, y: -0.57, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 348227948}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1434993383
 GameObject:
   m_ObjectHideFlags: 0

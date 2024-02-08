@@ -56,12 +56,12 @@ TagManager:
   - name: TileMap_Props
     uniqueID: 2207798497
     locked: 0
+  - name: Items
+    uniqueID: 2866818543
+    locked: 0
   - name: Personaje
     uniqueID: 675136615
     locked: 0
-  - name: ItemsDrop
-    uniqueID: 1975202165
-    locked: 0
   - name: UI
-    uniqueID: 3093833337
+    uniqueID: 1320181063
     locked: 0
