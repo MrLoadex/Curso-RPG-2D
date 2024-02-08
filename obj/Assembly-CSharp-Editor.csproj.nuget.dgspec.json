@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Unity\\Games\\Curso RPG 2D\\Assembly-CSharp-Editor.csproj": {}
+    "C:\\Users\\Admin\\Documents\\Juegos\\Curso RPG 2D\\Assembly-CSharp-Editor.csproj": {}
   },
   "projects": {
-    "D:\\Unity\\Games\\Curso RPG 2D\\Assembly-CSharp-Editor.csproj": {
+    "C:\\Users\\Admin\\Documents\\Juegos\\Curso RPG 2D\\Assembly-CSharp-Editor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Unity\\Games\\Curso RPG 2D\\Assembly-CSharp-Editor.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\Juegos\\Curso RPG 2D\\Assembly-CSharp-Editor.csproj",
         "projectName": "Assembly-CSharp-Editor",
-        "projectPath": "D:\\Unity\\Games\\Curso RPG 2D\\Assembly-CSharp-Editor.csproj",
-        "packagesPath": "C:\\Users\\LorDex\\.nuget\\packages\\",
-        "outputPath": "D:\\Unity\\Games\\Curso RPG 2D\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Documents\\Juegos\\Curso RPG 2D\\Assembly-CSharp-Editor.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\Juegos\\Curso RPG 2D\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\LorDex\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -26,8 +26,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "D:\\Unity\\Games\\Curso RPG 2D\\Assembly-CSharp.csproj": {
-                "projectPath": "D:\\Unity\\Games\\Curso RPG 2D\\Assembly-CSharp.csproj"
+              "C:\\Users\\Admin\\Documents\\Juegos\\Curso RPG 2D\\Assembly-CSharp.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Documents\\Juegos\\Curso RPG 2D\\Assembly-CSharp.csproj"
               }
             }
           }
@@ -52,21 +52,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Unity\\Games\\Curso RPG 2D\\Assembly-CSharp.csproj": {
+    "C:\\Users\\Admin\\Documents\\Juegos\\Curso RPG 2D\\Assembly-CSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Unity\\Games\\Curso RPG 2D\\Assembly-CSharp.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\Juegos\\Curso RPG 2D\\Assembly-CSharp.csproj",
         "projectName": "Assembly-CSharp",
-        "projectPath": "D:\\Unity\\Games\\Curso RPG 2D\\Assembly-CSharp.csproj",
-        "packagesPath": "C:\\Users\\LorDex\\.nuget\\packages\\",
-        "outputPath": "D:\\Unity\\Games\\Curso RPG 2D\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Documents\\Juegos\\Curso RPG 2D\\Assembly-CSharp.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\Juegos\\Curso RPG 2D\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\LorDex\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -100,7 +100,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
