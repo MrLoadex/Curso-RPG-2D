@@ -1,0 +1,4 @@
+repository "Curso RPG 2D@loadexx@cloud"
+  path "/"
+    br "/main"
+    co "/main"
