@@ -1,1 +1,5 @@
 Library/
+.vscode/
+.vs/
+.plastic/
+.vsconfig
