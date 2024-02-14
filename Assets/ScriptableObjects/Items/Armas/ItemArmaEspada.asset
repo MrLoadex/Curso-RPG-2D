@@ -22,4 +22,4 @@ MonoBehaviour:
   EsAcumulable: 0
   AcumulacionMax: 1
   Cantidad: 0
-  Arma: {fileID: 11400000, guid: d17813b7480dc064a8e068ec0f5d4415, type: 2}
+  Arma: {fileID: 11400000, guid: ff198b0096beec94293735ff1028048f, type: 2}

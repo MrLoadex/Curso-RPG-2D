@@ -101,12 +101,35 @@ public class InventarioUI : Singleton<InventarioUI>
         }
     }
 
+    public void EquiparItem()
+    {
+        if(slotSeleccionado != null)
+        {
+            slotSeleccionado.SlotEquiparItem();
+            slotSeleccionado.SeleccionarSlot();
+        }
+    }
+
+    public void RemoverItem()
+    {
+        if(slotSeleccionado != null)
+        {
+            slotSeleccionado.SlotRemoverItem();
+            slotSeleccionado.SeleccionarSlot();
+        }
+    }
+
+
     #region Evento
     private void SlotInteraccionRespuesta(TipoDeInteraccion tipo, int index)
     {
         if (tipo == TipoDeInteraccion.Click)
         {
             ActualizarInventarioDescripcion(index);
+        }
+        else if (tipo == TipoDeInteraccion.Equipar)
+        {
+
         }
     }
 
