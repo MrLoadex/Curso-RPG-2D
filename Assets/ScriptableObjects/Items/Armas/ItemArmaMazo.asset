@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12d4c8b8596ac646a7a2745eee24ee2, type: 3}
+  m_Name: ItemArmaMazo
+  m_EditorClassIdentifier: 
+  ID: MazoArma
+  Nombre: Mazo Rompe huesos
+  Icono: {fileID: 21300000, guid: c73306033da1123458ff4711007fd037, type: 3}
+  Descripcion: Mazo extremadamente fuerte a melee.
+  Tipo: 0
+  EsConsumible: 0
+  EsAcumulable: 0
+  AcumulacionMax: 1
+  Cantidad: 0
+  Arma: {fileID: 11400000, guid: a7cbe1f6d89dc2c4b883ab4af76d8884, type: 2}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267ae990a0d628842b4d183b9fb7f22e, type: 3}
+  m_Name: QuestMata50Enemigos
+  m_EditorClassIdentifier: 
+  Nombre: Cazador Experto
+  ID: Mata50
+  CantidadObjetivo: 50
+  NPCNombre: Inspector
+  Descripcion: Mata a cincuenta enemigos para ser el Gran Cazador
+  RecompensaOro: 100
+  RecompensaExp: 50
+  RecompensaItem:
+    item: {fileID: 11400000, guid: ecd6ffdb253384844872f35d02c99b25, type: 2}
+    Cantidad: 50
+  CantidadActual: 0
+  QuestCompletado: 0
