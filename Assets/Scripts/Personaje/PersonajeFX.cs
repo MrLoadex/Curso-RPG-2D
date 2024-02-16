@@ -8,12 +8,9 @@ public class PersonajeFX : MonoBehaviour
     [SerializeField] private GameObject canvasTextoAnimacionPrefab;
     [SerializeField] private Transform canvasTextoPosicion; 
 
-    private ObjectPooler pooler;
+    [Header("Pooler")]
+    [SerializeField] private ObjectPooler pooler;
 
-    private void Awake() {
-        pooler = GetComponent<ObjectPooler>();
-    }
-    
     void Start()
     {
         pooler.CrearPooler(canvasTextoAnimacionPrefab);

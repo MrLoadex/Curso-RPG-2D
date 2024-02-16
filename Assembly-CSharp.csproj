@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\IA\Acciones\AccionSeguirPersonaje.cs" />
     <Compile Include="Assets\Scripts\Extras\Singleton.cs" />
     <Compile Include="Assets\Scripts\Inventario\Items\ItemArma.cs" />
+    <Compile Include="Assets\Scripts\Personaje\PersonajeAtaque.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeMana.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\IA\SistemaIA\IADecision.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="Assets\Scripts\IA\Acciones\AccionActivarCaminoMovimiento.cs" />
     <Compile Include="Assets\Scripts\Armas\Arma.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+    <Compile Include="Assets\Scripts\Armas\Proyectil.cs" />
     <Compile Include="Assets\Scripts\IA\Decisiones\DesicionDeteccionPersonaje.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeFX.cs" />

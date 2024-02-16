@@ -4062,8 +4062,8 @@ GameObject:
   - component: {fileID: 348227954}
   - component: {fileID: 348227955}
   - component: {fileID: 348227956}
-  - component: {fileID: 348227958}
   - component: {fileID: 348227957}
+  - component: {fileID: 348227959}
   m_Layer: 6
   m_Name: GreenNinja
   m_TagString: Player
@@ -4158,6 +4158,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1433670659}
+  - {fileID: 658692538}
+  - {fileID: 1101286348}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &348227949
@@ -4332,7 +4334,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasTextoAnimacionPrefab: {fileID: 3852414835339296864, guid: 0c395043d69deb946ad922e0705ce964, type: 3}
   canvasTextoPosicion: {fileID: 1433670659}
---- !u!114 &348227958
+  pooler: {fileID: 1101286349}
+--- !u!114 &348227959
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4341,10 +4344,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 348227945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8ee2513ac5720545a0fafb907da2238, type: 3}
+  m_Script: {fileID: 11500000, guid: e42c43d9533aaa746bf8a3c11e841451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cantidadPorCrear: 10
+  pooler: {fileID: 658692539}
 --- !u!1 &370755902
 GameObject:
   m_ObjectHideFlags: 0
@@ -8349,6 +8352,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: 0, y: 0, z: 0, w: 0}
   m_Softness: {x: 0, y: 0}
+--- !u!1 &658692537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 658692538}
+  - component: {fileID: 658692539}
+  m_Layer: 6
+  m_Name: PoolerArma
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &658692538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658692537}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 348227948}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &658692539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658692537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ee2513ac5720545a0fafb907da2238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cantidadPorCrear: 10
 --- !u!1001 &660693248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11220,6 +11268,51 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1101286347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1101286348}
+  - component: {fileID: 1101286349}
+  m_Layer: 6
+  m_Name: PoolerFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1101286348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101286347}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 348227948}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1101286349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101286347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ee2513ac5720545a0fafb907da2238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cantidadPorCrear: 10
 --- !u!1 &1114358763
 GameObject:
   m_ObjectHideFlags: 0
