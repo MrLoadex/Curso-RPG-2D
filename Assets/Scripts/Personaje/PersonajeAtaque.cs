@@ -12,6 +12,8 @@ public class PersonajeAtaque : MonoBehaviour
 
     public Arma ArmaEquipada{get; private set;}
 
+    public EnemigoInteraccion EnemigoObjetivo { get; private set; }
+
     private void Awake() 
     {   
         stats = GetComponent<Personaje>().PersonajeStats;
@@ -45,5 +47,43 @@ public class PersonajeAtaque : MonoBehaviour
         ArmaEquipada = null;
     }
 
+    // Seleccionar a un enemigo
+    private void EnemigoRangoSeleccionado(EnemigoInteraccion enemigoSeleccionado)
+    {
+        // Si no hay arma equipada, o el arma no es magia, o el enemigo seleccionado es el mismo que el que estaba antes entonces retornar.
+        if (ArmaEquipada == null || ArmaEquipada.Tipo != TipoArma.Magia || EnemigoObjetivo == enemigoSeleccionado)
+        {
+            return;
+        }
+
+        EnemigoObjetivo = enemigoSeleccionado;
+        EnemigoObjetivo.MostrarEnemigoSeleccionado(true);
+
+    }
+
+    //Deseleccionar a un enemigo
+    private void EnemigoNoSeleccionado()
+    {
+        if (EnemigoObjetivo == null)
+        {
+            return;
+        }
+
+        EnemigoObjetivo.MostrarEnemigoSeleccionado(false);
+        EnemigoObjetivo = null;
+
+    }
+
+    private void OnEnable() 
+    {
+        SeleccionManager.EventoEnemigoSeleccionado += EnemigoRangoSeleccionado;   
+        SeleccionManager.EventoObjetoNoSeleccionado += EnemigoNoSeleccionado;   
+    }
+
+    private void OnDisable() 
+    {
+        SeleccionManager.EventoEnemigoSeleccionado -= EnemigoRangoSeleccionado;   
+        SeleccionManager.EventoObjetoNoSeleccionado -= EnemigoNoSeleccionado;   
+    }
 
 }

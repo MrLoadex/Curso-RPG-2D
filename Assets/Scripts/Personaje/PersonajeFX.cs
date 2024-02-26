@@ -5,11 +5,13 @@ using UnityEngine;
 public class PersonajeFX : MonoBehaviour
 {
 
-    [SerializeField] private GameObject canvasTextoAnimacionPrefab;
-    [SerializeField] private Transform canvasTextoPosicion; 
 
     [Header("Pooler")]
     [SerializeField] private ObjectPooler pooler;
+    
+    [Header("Configuracion")]
+    [SerializeField] private GameObject canvasTextoAnimacionPrefab;
+    [SerializeField] private Transform canvasTextoPosicion; 
 
     void Start()
     {
