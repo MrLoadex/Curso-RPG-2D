@@ -12,10 +12,14 @@ public class ContenedorArma : Singleton<ContenedorArma>
     {
         ArmaEquipada = itemArma;
         armaIcono.sprite = itemArma.Arma.ArmaIcono;
-        armaSkillIcono.sprite = itemArma.Arma.SkillIcono;
-        
         armaIcono.gameObject.SetActive(true);
-        armaSkillIcono.gameObject.SetActive(true);
+        
+        if (itemArma.Arma.Tipo == TipoArma.Magia)
+        {
+            armaSkillIcono.sprite = itemArma.Arma.SkillIcono;
+            armaSkillIcono.gameObject.SetActive(true);
+        }
+
         Inventario.Instance.Personaje.PersonajeAtaque.EquiparArma(itemArma);
     }
 
@@ -25,5 +29,6 @@ public class ContenedorArma : Singleton<ContenedorArma>
         armaSkillIcono.gameObject.SetActive(false);
         ArmaEquipada = null;
         Inventario.Instance.Personaje.PersonajeAtaque.RemoverArma();
+        
     }
 }

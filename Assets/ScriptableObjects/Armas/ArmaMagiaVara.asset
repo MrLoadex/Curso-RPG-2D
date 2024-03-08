@@ -16,6 +16,7 @@ MonoBehaviour:
   SkillIcono: {fileID: -1439843171, guid: 1eeecb14c188349429b27c95eb2ad227, type: 3}
   Tipo: 0
   "Da\xF1o": 6
+  ProyectilPrefab: {fileID: 3027505219855038999, guid: a273ad25edb8c4a4086d7f8fd7bb7496, type: 3}
   ManaRequerida: 8
   ChanceCritico: 4
   ChanceDeBloqueo: 1
