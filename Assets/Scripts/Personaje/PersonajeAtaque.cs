@@ -11,15 +11,73 @@ public class PersonajeAtaque : MonoBehaviour
     
     private PersonajeStats stats;
 
+
+    [Header("Ataque")]
+    [SerializeField] private float tiempoEntreAtaques;
+    [SerializeField]
+    [Tooltip("0 = Arriba \n 1 = Derecha \n 2 = Abajo \n 3 = Izquierda")]
+    Transform[] posicionesDisparo;
+
     public Arma ArmaEquipada{get; private set;}
 
     public EnemigoInteraccion EnemigoObjetivo { get; private set; }
 
+    private PersonajeMana _personajeMana;
+
+    // Guarda la ultima posicion de a la que miro el player para disparar en esta misma  
+    private int indexDireccionDisparo;
+    private float tiempoParaSiguienteAtaque;
+
     private void Awake() 
     {   
         stats = GetComponent<Personaje>().PersonajeStats;
+        _personajeMana = GetComponent<PersonajeMana>();
     }
 
+    private void Update()
+    {
+        ObtenerDireccionDisparo();
+
+        if(Time.time > tiempoParaSiguienteAtaque)
+        {
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                if (ArmaEquipada == null || EnemigoObjetivo == null)
+                { 
+                    return; 
+                }
+                
+                UsarArma();
+                tiempoParaSiguienteAtaque = Time.time + tiempoEntreAtaques;
+            }
+        }
+    }
+
+    private void UsarArma()
+    {
+        // Comprobar tipo
+        if (ArmaEquipada.Tipo == TipoArma.Magia)
+        {
+            // Comprobar mana
+            if (_personajeMana.ManaActual < ArmaEquipada.ManaRequerida)
+            {
+                return;
+            }
+
+            // Obtener instancia del Proyectil del Pooler 
+            GameObject nuevoProyectil = pooler.ObtenerInstancia();
+            nuevoProyectil.transform.localPosition = posicionesDisparo[indexDireccionDisparo].position; 
+            
+            // Configurar proyectil
+            Proyectil proyectil = nuevoProyectil.GetComponent<Proyectil>();
+            proyectil.InicializarProyectil(EnemigoObjetivo);
+            // Activar proyectil
+            nuevoProyectil.SetActive(true);
+
+            // Consumir Mana necesario
+            _personajeMana.UsarMana(ArmaEquipada.ManaRequerida);
+        }
+    }
 
     public void EquiparArma(ItemArma armaPorEquipar)
     {
@@ -48,6 +106,37 @@ public class PersonajeAtaque : MonoBehaviour
         ArmaEquipada = null;
     }
 
+    #region Disparar
+
+    private void ObtenerDireccionDisparo()
+    {
+        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")); 
+        //Derecha
+        if(input.x > 0.1f)
+        {
+            indexDireccionDisparo = 1;
+        }
+        //Izquierda
+        else if (input.x < 0)
+        {
+            indexDireccionDisparo = 3;
+        }
+        //Arriba
+        else if (input.y > 0.1f)
+        {
+            indexDireccionDisparo = 0;
+        }
+        //Abajo
+        else if (input.y < 0)
+        {
+            indexDireccionDisparo = 2;
+        }
+    }
+        
+    #endregion
+
+    #region Seleccion De Enemigo
+        
     // Seleccionar a un enemigo
     private void EnemigoRangoSeleccionado(EnemigoInteraccion enemigoSeleccionado)
     {
@@ -94,6 +183,8 @@ public class PersonajeAtaque : MonoBehaviour
         EnemigoObjetivo.MostrarEnemigoSeleccionado(false, TipoDeteccion.Melee);
         EnemigoObjetivo = null;
     }
+
+    #endregion
 
     private void OnEnable() 
     {
