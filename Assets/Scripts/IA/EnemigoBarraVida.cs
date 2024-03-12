@@ -15,6 +15,8 @@ public class EnemigoBarraVida : MonoBehaviour
                                saludActual / saludMax,  10f * Time.deltaTime);
     }
 
+    
+
     public void ModificarSalud(float pSaludActual, float pSaludMax)
     {
         saludActual = pSaludActual;

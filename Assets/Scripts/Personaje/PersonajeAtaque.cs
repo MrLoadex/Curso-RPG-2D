@@ -11,7 +11,6 @@ public class PersonajeAtaque : MonoBehaviour
     
     private PersonajeStats stats;
 
-
     [Header("Ataque")]
     [SerializeField] private float tiempoEntreAtaques;
     [SerializeField]
@@ -21,6 +20,8 @@ public class PersonajeAtaque : MonoBehaviour
     public Arma ArmaEquipada{get; private set;}
 
     public EnemigoInteraccion EnemigoObjetivo { get; private set; }
+
+    public bool Atacando { get; set; }
 
     private PersonajeMana _personajeMana;
 
@@ -70,12 +71,18 @@ public class PersonajeAtaque : MonoBehaviour
             
             // Configurar proyectil
             Proyectil proyectil = nuevoProyectil.GetComponent<Proyectil>();
-            proyectil.InicializarProyectil(EnemigoObjetivo);
+            proyectil.InicializarProyectil(this);
             // Activar proyectil
             nuevoProyectil.SetActive(true);
 
             // Consumir Mana necesario
             _personajeMana.UsarMana(ArmaEquipada.ManaRequerida);
+            StartCoroutine(IEEstablecerCondicionAtaque());
+        }
+        else if (ArmaEquipada.Tipo == TipoArma.Melee)
+        {
+            EnemigoVida enemigoVida = EnemigoObjetivo.GetComponent<EnemigoVida>();
+            enemigoVida.RecibirDaño(ObtenerDaño());
         }
     }
 
@@ -106,6 +113,17 @@ public class PersonajeAtaque : MonoBehaviour
         ArmaEquipada = null;
     }
 
+    public float ObtenerDaño()
+    {
+        float cantidad = stats.Daño;
+        if(Random.value < stats.PorcentajeCritico / 100)
+        {
+            cantidad *= 2;
+        }
+
+        return cantidad;
+    }
+
     #region Disparar
 
     private void ObtenerDireccionDisparo()
@@ -132,11 +150,17 @@ public class PersonajeAtaque : MonoBehaviour
             indexDireccionDisparo = 2;
         }
     }
-        
+
+    private IEnumerator IEEstablecerCondicionAtaque()
+    {
+        Atacando = true;
+        yield return new WaitForSeconds(0.3f);
+        Atacando = false;
+    }
+
     #endregion
 
-    #region Seleccion De Enemigo
-        
+    #region Seleccion De Enemigo       
     // Seleccionar a un enemigo
     private void EnemigoRangoSeleccionado(EnemigoInteraccion enemigoSeleccionado)
     {
@@ -150,7 +174,6 @@ public class PersonajeAtaque : MonoBehaviour
         EnemigoObjetivo.MostrarEnemigoSeleccionado(true, TipoDeteccion.Rango);
 
     }
-
     //Deseleccionar a un enemigo
     private void EnemigoNoSeleccionado()
     {

@@ -6,6 +6,8 @@ public class Proyectil : MonoBehaviour
     [Header("Config")]
     [SerializeField] private float velocidad;
 
+    public PersonajeAtaque PersonajeAtaque { get; private set; }
+
     Rigidbody2D _rigidbody2D;
     Vector2 direccion;
     EnemigoInteraccion enemigoObjetivo;
@@ -35,14 +37,16 @@ public class Proyectil : MonoBehaviour
         _rigidbody2D.MovePosition(_rigidbody2D.position + direccion.normalized * velocidad * Time.fixedDeltaTime);
     }
 
-    public void InicializarProyectil(EnemigoInteraccion enemigo)
+    public void InicializarProyectil(PersonajeAtaque ataque)
     {
-        enemigoObjetivo = enemigo;
+        PersonajeAtaque = ataque;
+        enemigoObjetivo = ataque.EnemigoObjetivo;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Enemigo"))
         {
+            enemigoObjetivo.GetComponent<EnemigoVida>().RecibirDaño(PersonajeAtaque.ObtenerDaño());
             gameObject.SetActive(false);
         }
     }
