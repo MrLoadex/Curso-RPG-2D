@@ -22,6 +22,8 @@ public class PersonajeAtaque : MonoBehaviour
 
     public EnemigoInteraccion EnemigoObjetivo { get; private set; }
 
+    public bool Atacando { get; set; }
+
     private PersonajeMana _personajeMana;
 
     // Guarda la ultima posicion de a la que miro el player para disparar en esta misma  
@@ -76,6 +78,7 @@ public class PersonajeAtaque : MonoBehaviour
 
             // Consumir Mana necesario
             _personajeMana.UsarMana(ArmaEquipada.ManaRequerida);
+            StartCoroutine(IEEstablecerCondicionAtaque());
         }
     }
 
@@ -135,8 +138,7 @@ public class PersonajeAtaque : MonoBehaviour
         
     #endregion
 
-    #region Seleccion De Enemigo
-        
+    #region Seleccion De Enemigo       
     // Seleccionar a un enemigo
     private void EnemigoRangoSeleccionado(EnemigoInteraccion enemigoSeleccionado)
     {
@@ -150,7 +152,6 @@ public class PersonajeAtaque : MonoBehaviour
         EnemigoObjetivo.MostrarEnemigoSeleccionado(true, TipoDeteccion.Rango);
 
     }
-
     //Deseleccionar a un enemigo
     private void EnemigoNoSeleccionado()
     {
@@ -200,6 +201,13 @@ public class PersonajeAtaque : MonoBehaviour
         SeleccionManager.EventoObjetoNoSeleccionado -= EnemigoNoSeleccionado;   
         PersonajeDetector.EventoEnemigoDetectado -= EnemigoMeleeDetectado;
         PersonajeDetector.EventoEnemigoPerdido -= EnemigoMeleePerdido;
+    }
+
+    private IEnumerator IEEstablecerCondicionAtaque()
+    {
+        Atacando = true;
+        yield return new WaitForSeconds(0.3f);
+        Atacando = false;
     }
 
 }

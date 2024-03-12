@@ -4328,6 +4328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerIdle: Idle
   layerCaminar: Caminar
+  layerAtacar: Atacar
   _animator: {fileID: 0}
 --- !u!114 &348227953
 MonoBehaviour:
