@@ -46,7 +46,9 @@ public class Proyectil : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Enemigo"))
         {
-            enemigoObjetivo.GetComponent<EnemigoVida>().RecibirDaño(PersonajeAtaque.ObtenerDaño());
+            float daño = PersonajeAtaque.ObtenerDaño();
+            enemigoObjetivo.GetComponent<EnemigoVida>().RecibirDaño(daño);
+            PersonajeAtaque.EventoEnemigoDañado?.Invoke(daño);
             gameObject.SetActive(false);
         }
     }

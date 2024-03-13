@@ -4438,6 +4438,7 @@ MonoBehaviour:
   pooler: {fileID: 1101286349}
   canvasTextoAnimacionPrefab: {fileID: 3852414835339296864, guid: 0c395043d69deb946ad922e0705ce964, type: 3}
   canvasTextoPosicion: {fileID: 1433670659}
+  tipoPersonaje: 0
 --- !u!114 &348227959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7718,6 +7719,8 @@ GameObject:
   - component: {fileID: 594227272}
   - component: {fileID: 594227273}
   - component: {fileID: 594227274}
+  - component: {fileID: 594227276}
+  - component: {fileID: 594227275}
   m_Layer: 7
   m_Name: Enemigo_Rojo
   m_TagString: Enemigo
@@ -7917,6 +7920,7 @@ Transform:
   - {fileID: 1378427667}
   - {fileID: 1177909137}
   - {fileID: 1129349725}
+  - {fileID: 1019353864}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &594227272
@@ -7977,6 +7981,35 @@ MonoBehaviour:
   saludMax: 20
   barraVidaPrefab: {fileID: 3247156796086945078, guid: 324f3cbc3cc1fd547921119c38b967f0, type: 3}
   barraVidaPosicion: {fileID: 204205911}
+--- !u!114 &594227275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594227264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ee2513ac5720545a0fafb907da2238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cantidadPorCrear: 4
+--- !u!114 &594227276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594227264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e22befba8124914ba9574686421d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooler: {fileID: 594227275}
+  canvasTextoAnimacionPrefab: {fileID: 3852414835339296864, guid: 0c395043d69deb946ad922e0705ce964, type: 3}
+  canvasTextoPosicion: {fileID: 1019353864}
+  tipoPersonaje: 1
 --- !u!1 &595324995
 GameObject:
   m_ObjectHideFlags: 0
@@ -10619,6 +10652,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015609374}
   m_CullTransparentMesh: 1
+--- !u!1 &1019353863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1019353864}
+  m_Layer: 7
+  m_Name: TextoPosicion
+  m_TagString: Untagged
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1019353864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019353863}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.29, y: -0.74, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 594227271}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1021396173
 GameObject:
   m_ObjectHideFlags: 0

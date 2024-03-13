@@ -7,9 +7,9 @@ public class TextoAnimacion : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI dañoTMP;
     
-    
-    public void EstablecerTexto(float cantidad)
+    public void EstablecerTexto(float cantidad, Color color)
     {
         dañoTMP.text = cantidad.ToString();
+        dañoTMP.color = color;
     }
 }

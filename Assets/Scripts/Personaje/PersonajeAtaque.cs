@@ -1,11 +1,11 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class PersonajeAtaque : MonoBehaviour
 {
+    public static Action<float> EventoEnemigoDañado;
+
     [Header("Pooler")]
     [SerializeField] private ObjectPooler pooler;
     
@@ -81,9 +81,22 @@ public class PersonajeAtaque : MonoBehaviour
         }
         else if (ArmaEquipada.Tipo == TipoArma.Melee)
         {
+            float daño = ObtenerDaño();
             EnemigoVida enemigoVida = EnemigoObjetivo.GetComponent<EnemigoVida>();
-            enemigoVida.RecibirDaño(ObtenerDaño());
+            enemigoVida.RecibirDaño(daño);
+            EventoEnemigoDañado?.Invoke(daño);
         }
+    }
+
+    public float ObtenerDaño()
+    {
+        float cantidad = stats.Daño;
+        if(UnityEngine.Random.value < stats.PorcentajeCritico / 100)
+        {
+            cantidad *= 2;
+        }
+
+        return cantidad;
     }
 
     public void EquiparArma(ItemArma armaPorEquipar)
@@ -111,17 +124,6 @@ public class PersonajeAtaque : MonoBehaviour
 
         stats.RemoverBonusPorArma(ArmaEquipada);
         ArmaEquipada = null;
-    }
-
-    public float ObtenerDaño()
-    {
-        float cantidad = stats.Daño;
-        if(Random.value < stats.PorcentajeCritico / 100)
-        {
-            cantidad *= 2;
-        }
-
-        return cantidad;
     }
 
     #region Disparar
