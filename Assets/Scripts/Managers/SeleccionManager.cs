@@ -41,9 +41,20 @@ public class SeleccionManager : MonoBehaviour
 
         if (hit.collider != null)
         {
-
             // Seleccionar al enemigo
             EnemigoSeleccionado = hit.collider.GetComponent<EnemigoInteraccion>();
+            
+            //
+            EnemigoVida enemigoVida = EnemigoSeleccionado.GetComponent<EnemigoVida>();
+            if (enemigoVida.Salud > 0)
+            {
+                EventoEnemigoSeleccionado?.Invoke(EnemigoSeleccionado);
+            }
+            else
+            {
+                LootManager.Instance.MostrarLoot();
+            }
+
             // Invocar evento
             EventoEnemigoSeleccionado?.Invoke(EnemigoSeleccionado);
         }

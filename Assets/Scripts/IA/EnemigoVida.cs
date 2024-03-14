@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class EnemigoVida : VidaBase
 {
+
+    [Header("Vida")]
     [SerializeField] private EnemigoBarraVida barraVidaPrefab;
     [SerializeField] private Transform barraVidaPosicion;
 
+    [Header("Rastros")]
+    [SerializeField] private GameObject rastros;
 
     private EnemigoBarraVida _enemigoBarraVidaCreada;
     private EnemigoInteraccion _enemigoInteraccion;
@@ -49,6 +53,7 @@ public class EnemigoVida : VidaBase
 
     private void DesactivarEnemigo()
     {
+        rastros.SetActive(true);
         _enemigoBarraVidaCreada.gameObject.SetActive(false);
         _spriteRenderer.enabled = false;
         _enemigoMovimiento.enabled = false;
