@@ -1,16 +1,15 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class PersonajeAtaque : MonoBehaviour
 {
+    public static Action<float> EventoEnemigoDañado;
+
     [Header("Pooler")]
     [SerializeField] private ObjectPooler pooler;
     
     private PersonajeStats stats;
-
 
     [Header("Ataque")]
     [SerializeField] private float tiempoEntreAtaques;
@@ -72,7 +71,7 @@ public class PersonajeAtaque : MonoBehaviour
             
             // Configurar proyectil
             Proyectil proyectil = nuevoProyectil.GetComponent<Proyectil>();
-            proyectil.InicializarProyectil(EnemigoObjetivo);
+            proyectil.InicializarProyectil(this);
             // Activar proyectil
             nuevoProyectil.SetActive(true);
 
@@ -80,6 +79,24 @@ public class PersonajeAtaque : MonoBehaviour
             _personajeMana.UsarMana(ArmaEquipada.ManaRequerida);
             StartCoroutine(IEEstablecerCondicionAtaque());
         }
+        else if (ArmaEquipada.Tipo == TipoArma.Melee)
+        {
+            float daño = ObtenerDaño();
+            EnemigoVida enemigoVida = EnemigoObjetivo.GetComponent<EnemigoVida>();
+            enemigoVida.RecibirDaño(daño);
+            EventoEnemigoDañado?.Invoke(daño);
+        }
+    }
+
+    public float ObtenerDaño()
+    {
+        float cantidad = stats.Daño;
+        if(UnityEngine.Random.value < stats.PorcentajeCritico / 100)
+        {
+            cantidad *= 2;
+        }
+
+        return cantidad;
     }
 
     public void EquiparArma(ItemArma armaPorEquipar)
@@ -135,7 +152,14 @@ public class PersonajeAtaque : MonoBehaviour
             indexDireccionDisparo = 2;
         }
     }
-        
+
+    private IEnumerator IEEstablecerCondicionAtaque()
+    {
+        Atacando = true;
+        yield return new WaitForSeconds(0.3f);
+        Atacando = false;
+    }
+
     #endregion
 
     #region Seleccion De Enemigo       
