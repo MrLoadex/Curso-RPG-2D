@@ -8158,6 +8158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 929f6397200957445b68a6d77e5e20ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expGanada: 3
   lootDisponible:
   - Nombre: Pocion Vida
     Item: {fileID: 11400000, guid: 89945ae589403e54e8087c4486e8bc9c, type: 2}
@@ -11304,6 +11305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 929f6397200957445b68a6d77e5e20ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expGanada: 3
   lootDisponible:
   - Nombre: Pocion de Vida
     Item: {fileID: 11400000, guid: 89945ae589403e54e8087c4486e8bc9c, type: 2}
