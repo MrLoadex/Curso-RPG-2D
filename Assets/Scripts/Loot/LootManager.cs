@@ -47,4 +47,10 @@ public class LootManager : Singleton<LootManager>
 
         return false;
     }
+
+    public void CerrarPanel()
+
+    {
+        panelLoot.SetActive(false);
+    }
 }
