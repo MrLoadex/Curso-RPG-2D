@@ -1367,7 +1367,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesetElement_59
+      name: Escalera
       rect:
         serializedVersion: 2
         x: 97
@@ -2112,6 +2112,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Escalera: -1787146130
       TilesetElement_0: -1512361655
       TilesetElement_1: -1748905902
       TilesetElement_10: -924670600
@@ -2167,7 +2168,6 @@ TextureImporter:
       TilesetElement_56: 2087043374
       TilesetElement_57: -843789483
       TilesetElement_58: -1268397648
-      TilesetElement_59: -1787146130
       TilesetElement_6: -1234011828
       TilesetElement_60: -1563488231
       TilesetElement_61: 79863166
