@@ -227,11 +227,4 @@ public class PersonajeAtaque : MonoBehaviour
         PersonajeDetector.EventoEnemigoPerdido -= EnemigoMeleePerdido;
     }
 
-    private IEnumerator IEEstablecerCondicionAtaque()
-    {
-        Atacando = true;
-        yield return new WaitForSeconds(0.3f);
-        Atacando = false;
-    }
-
 }
