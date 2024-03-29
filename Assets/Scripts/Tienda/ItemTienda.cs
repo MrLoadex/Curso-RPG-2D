@@ -12,7 +12,11 @@ public class ItemTienda : MonoBehaviour
     [SerializeField] private TextMeshProUGUI itemCostoTMP;
     [SerializeField] private TextMeshProUGUI cantidadPorComprarTMP;
 
-    public ItemVenta ItemCargado { get; set; }
+    private int cantidad = 1;
+    private int costoInicial;
+    private int costoActual;
+
+    public ItemVenta ItemCargado { get; private set; }
 
     public void ConfigurarItemVenta(ItemVenta itemVenta)
     {
@@ -20,5 +24,47 @@ public class ItemTienda : MonoBehaviour
         itemIcono.sprite = itemVenta.Item.Icono;
         itemNombreTMP.text= itemVenta.Item.Nombre;
         itemCostoTMP.text= itemVenta.CostoBase.ToString();
+        //Configurar costos
+        costoInicial = itemVenta.CostoBase;
+        costoActual = itemVenta.CostoBase;
+    }
+
+    private void Update() 
+    {
+        cantidadPorComprarTMP.text = cantidad.ToString();
+        itemCostoTMP.text = costoActual.ToString();
+    }
+
+    public void ComprarItem()
+    {
+        if (MonedasManager.Instance.MonedasTotales <= costoActual)
+        {
+            return;
+        }
+
+        Inventario.Instance.AñadirItem(ItemCargado.Item, cantidad);
+        MonedasManager.Instance.RemoverMonedas(costoActual);
+        cantidad = 1;
+        costoActual = costoInicial;
+    }
+
+    public void SumarItemPorComprar()
+    {
+        int costoDeCompra = costoInicial * (cantidad + 1);
+        if (MonedasManager.Instance.MonedasTotales >=  costoDeCompra)
+        {
+            cantidad ++;
+            costoActual = costoInicial * cantidad;
+        }
+    }
+
+    public void RestarItemPorComprar()
+    {
+        if (cantidad == 1)
+        {
+            return;
+        }
+        cantidad --;
+        costoActual = costoInicial * cantidad;  
     }
 }

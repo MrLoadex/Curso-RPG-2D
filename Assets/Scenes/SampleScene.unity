@@ -44810,6 +44810,12 @@ MonoBehaviour:
   - Nombre: Pergamino libre
     Item: {fileID: 11400000, guid: 2a22978848885ee42b06f82f70a720c6, type: 2}
     CostoBase: 10
+  - Nombre: Arco
+    Item: {fileID: 11400000, guid: 95ae49dcd0afe674a980e9f348b011b2, type: 2}
+    CostoBase: 100
+  - Nombre: Baston Magico
+    Item: {fileID: 11400000, guid: 0dc4f0f006d07174ebc9352a96618d1f, type: 2}
+    CostoBase: 150
 --- !u!1 &1433670658
 GameObject:
   m_ObjectHideFlags: 0
