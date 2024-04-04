@@ -5,7 +5,8 @@ public enum TiposDeItem
     Armas,
     Pociones,
     Pergaminos,
-    Tesoros
+    Tesoros,
+    Ingredientes
 }
 
 

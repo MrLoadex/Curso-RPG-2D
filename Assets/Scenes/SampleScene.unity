@@ -47189,6 +47189,12 @@ MonoBehaviour:
   - Nombre: Pergamino De Fuego
     Item: {fileID: 11400000, guid: bdc69d8e330bff8418b3143703c01414, type: 2}
     CostoBase: 25
+  - Nombre: Miel
+    Item: {fileID: 11400000, guid: 18efccef63c0dc94aa5932fbd5ec2266, type: 2}
+    CostoBase: 10
+  - Nombre: Agua
+    Item: {fileID: 11400000, guid: 8bbfaa015b96808458ca7b920a194706, type: 2}
+    CostoBase: 10
   - Nombre: Arco
     Item: {fileID: 11400000, guid: 95ae49dcd0afe674a980e9f348b011b2, type: 2}
     CostoBase: 100

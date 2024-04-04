@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65d96799d280e4c48ab625dfaa764924, type: 3}
-  m_Name: ItemPocionVida
+  m_Name: ItemMedipak
   m_EditorClassIdentifier: 
-  ID: PocionVida
-  Nombre: Pocion De vida
-  Icono: {fileID: 21300000, guid: d06a213e241e63c40948e4d7754785be, type: 3}
-  Descripcion: Pocion de vida que restaura 10 puntos de salud
+  ID: Medipack
+  Nombre: Medipack
+  Icono: {fileID: 21300000, guid: 0f5e76d6bc4942c4cac21930d2fd7a0f, type: 3}
+  Descripcion: Pocion de vida que restaura 25 puntos de salud
   Tipo: 1
   EsConsumible: 1
   EsAcumulable: 1
   AcumulacionMax: 50
   Cantidad: 0
-  HPRestauracion: 10
+  HPRestauracion: 25
