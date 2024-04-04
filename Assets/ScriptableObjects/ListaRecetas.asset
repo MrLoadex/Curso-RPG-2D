@@ -20,14 +20,14 @@ MonoBehaviour:
     item2CantidadRequerida: 5
     ItemResultado: {fileID: 11400000, guid: 9976c836e6a70bc4796ea7165ac4041b, type: 2}
     itemResultadoCantidad: 1
-  - nombre: Pocion De Vida
+  - nombre: Pocion Vida
     Item1: {fileID: 11400000, guid: 8bbfaa015b96808458ca7b920a194706, type: 2}
     item1CantidadRequerida: 1
     Item2: {fileID: 11400000, guid: 18efccef63c0dc94aa5932fbd5ec2266, type: 2}
     item2CantidadRequerida: 2
     ItemResultado: {fileID: 11400000, guid: 89945ae589403e54e8087c4486e8bc9c, type: 2}
     itemResultadoCantidad: 1
-  - nombre: Pocion De Mana
+  - nombre: Pocion Mana
     Item1: {fileID: 11400000, guid: 8bbfaa015b96808458ca7b920a194706, type: 2}
     item1CantidadRequerida: 1
     Item2: {fileID: 11400000, guid: 2a22978848885ee42b06f82f70a720c6, type: 2}
