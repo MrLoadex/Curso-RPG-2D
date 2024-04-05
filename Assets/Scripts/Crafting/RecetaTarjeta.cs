@@ -17,4 +17,10 @@ public class RecetaTarjeta : MonoBehaviour
         recetaIcono.sprite = receta.ItemResultado.Icono;
         recetaNombreTMP.text = receta.ItemResultado.Nombre;
     }
+
+    public void SeleccionarReceta()
+    {
+        CraftingManager.Instance.MostrarReceta(RecetaCargada);
+        UIManager.Instance.AbrirCerrarPanelCraftingInfo(true);
+    }
 }

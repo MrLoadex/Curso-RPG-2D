@@ -204,6 +204,23 @@ public class Inventario : Singleton<Inventario>
         }
     }
 
+    public int ObtenerCantidadDeItems(string itemID)
+    {
+        List<int> indexes = VerificarExistencias(itemID);
+
+        int cantidadTotal = 0;
+
+        foreach (int index in indexes)
+        {
+            if (itemsInventario[index].ID == itemID)
+            {
+                cantidadTotal += itemsInventario[index].Cantidad;
+            }
+        }
+
+        return cantidadTotal;
+    }
+
     #region Eventos
 
     private void OnEnable() 
