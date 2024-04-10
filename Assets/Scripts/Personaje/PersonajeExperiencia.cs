@@ -45,11 +45,12 @@ public class PersonajeExperiencia : MonoBehaviour
 
     public void AñadirExperiencia(float expObtenida)
     {
+        // Comprobacion
         if (expObtenida <= 0)
         {
             return;
         }
-        
+        // Experiencia para el siguiente nivel
         float expRestanteNuevoNivel = expRequeridaSiguienteNivel - expActualTemp;
         
         if (expObtenida >= expRestanteNuevoNivel)
@@ -96,6 +97,7 @@ public class PersonajeExperiencia : MonoBehaviour
     {
         AñadirExperiencia(exp);
     }
+    
     private void OnEnable() 
     {
         EnemigoVida.EventoEnemigoDerrotado += RespuestaEnemigoDerrotado;

@@ -8856,7 +8856,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 494461916}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1758183641}
+        m_TargetAssemblyTypeName: CraftingManager, Assembly-CSharp
+        m_MethodName: Craftear
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &494461916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10824,9 +10836,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ebd8bd2bb0a2044a571e50a4b0c825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventarioAlmacen: {fileID: 11400000, guid: 37de112e549a71248850d114196e3e5c, type: 2}
   itemsInventario: []
   personaje: {fileID: 348227954}
-  numerDeSlots: 24
+  numeroDeSlots: 24
 --- !u!4 &595324998
 Transform:
   m_ObjectHideFlags: 0
@@ -51501,6 +51514,9 @@ MonoBehaviour:
   segundoMaterialCantidadTMP: {fileID: 97899875}
   recetaMensajeTMP: {fileID: 317785051}
   buttonCraftear: {fileID: 494461915}
+  itemResultadoIcono: {fileID: 1311258060}
+  itemResultadoNombreTMP: {fileID: 324455871}
+  itemResultadoDescripcionTMP: {fileID: 1939675387}
   recetas: {fileID: 11400000, guid: f2f13a369dbb967428532eaef8713704, type: 2}
 --- !u!1 &1794737528
 GameObject:

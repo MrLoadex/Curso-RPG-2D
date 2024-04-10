@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84628487afe644b45a032a8f858db8c0, type: 3}
   m_Name: DialogoHerrero
   m_EditorClassIdentifier: 
-  Nombre: Comerciante
+  Nombre: Herrero
   Icono: {fileID: 21300000, guid: 31afba58e7749354e84d6e68734e44c1, type: 3}
   ContieneInteraccionExtra: 1
   InteraccionExtra: 2

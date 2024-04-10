@@ -47,6 +47,10 @@ public class InventarioItem : ScriptableObject
         return true;
     }
 
+    public virtual string DescripcionItemCrafting()
+    {
+        return "";
+    }
 }
 
     

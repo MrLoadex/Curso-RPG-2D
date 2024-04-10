@@ -93,7 +93,7 @@ public class UIManager : Singleton<UIManager>
         statBloqueoTMP.text = $"{stats.PorcentajeBloqueo}%";
         statVelocidadTMP.text = stats.Velocidad.ToString();
         statNivelTMP.text = stats.Nivel.ToString();
-        statExpTMP.text = stats.ExpActual.ToString();
+        statExpTMP.text = stats.ExpActualTemp.ToString();
         statExpRequeridaTMP.text = stats.ExpRequeridaSiguienteNivel.ToString();
         
         atributoFuerzaTMP.text = stats.Fuerza.ToString();

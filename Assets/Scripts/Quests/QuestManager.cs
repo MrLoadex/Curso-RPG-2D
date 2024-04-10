@@ -86,6 +86,10 @@ public class QuestManager : Singleton<QuestManager>
         {
             return;
         }
+        if (!questPorActualizar.QuestAceptado)
+        {
+            return;
+        }
         
         questPorActualizar.AñadirProgreso(cantidad);
     }
@@ -124,7 +128,13 @@ public class QuestManager : Singleton<QuestManager>
 
     private void OnEnable() 
     {
+
+        for (int i = 0; i < questDisponibles.Length; i++)
+        {
+          questDisponibles[i].ResetQuest();  
+        }
         Quest.EventoQuestCompletado += ResponderQuestCompletado;
+        
     }
 
     private void OnDisable() 

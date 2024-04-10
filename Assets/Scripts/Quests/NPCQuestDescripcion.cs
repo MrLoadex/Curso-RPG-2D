@@ -23,6 +23,8 @@ public class NPCQuestDescripcion : QuestDescripcion
             return;
         }
 
+        QuestPorCompletar.QuestAceptado = true;
+
         QuestManager.Instance.AñadirQuest(QuestPorCompletar);
         gameObject.SetActive(false);
     }
